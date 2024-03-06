@@ -1,7 +1,9 @@
 <script setup>
+import MainChess from "@/views/MainChess.vue";
+
 const test = ref()
 </script>
 
 <template>
-    <VTextField v-model="test"/>
+    <MainChess />
 </template>    
