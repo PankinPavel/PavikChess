@@ -1,0 +1,533 @@
+// Write your overrides
+
+.layout-navbar {
+  z-index: 100 !important;
+  top: 0 !important;
+  padding: 0 !important;
+
+  .navbar-content-container {
+    border-radius: 0 !important;
+  }
+}
+
+.layout-vertical-nav {
+  top: 64px;
+  z-index: 90 !important;
+}
+
+.horizontal-nav-content-container {
+  padding-left: 0 !important;
+}
+
+.layout-page-content {
+  //Отсутпы для контента
+  //margin: 0 !important;
+}
+
+.card-number {
+  color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
+}
+
+.clip-with-lines {
+  --clamp-lines-inner: var(--clamp-lines, 1);
+  -webkit-line-clamp: var(--clamp-lines-inner);
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mb-tabs {
+  .v-slide-group__content {
+    gap: .25rem;
+  }
+
+  .v-tab {
+    min-width: unset !important;
+
+    &.v-tab--selected {
+      color: rgba(var(--v-theme-primary));
+      box-shadow: none !important;
+    }
+  }
+}
+
+.nav-section-title {
+  margin-top: 0.5rem !important;
+}
+
+.mb-breadcrumbs {
+  font-size: 15px;
+
+  .v-breadcrumbs-divider {
+    display: flex;
+    align-items: center;
+  }
+
+  .v-breadcrumbs-item .v-icon {
+    font-size: 1.375rem !important;
+  }
+}
+
+.whitespace-normal {
+  white-space: normal !important;
+}
+
+// Перезатираю стиль для удобного контроля колонок в таблице
+.v-data-table__td {
+  white-space: normal !important;
+}
+
+.v-data-table-column--align-right {
+  text-align: right;
+}
+
+.v-btn {
+  text-transform: none !important;
+}
+
+.information {
+  font-size: 10px;
+}
+
+.document-products-table, .employees-table {
+  .information {
+    font-size: 8px;
+    font-style: italic;
+  }
+
+  table {
+    table-layout: fixed;
+  }
+
+  border-left: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
+  border-right: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
+
+  th {
+    border-top: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
+    border-right: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
+    background-color: rgb(var(--v-theme-background));
+    text-transform: initial !important;
+    padding: 0 8px !important;
+    height: 24px !important;
+  }
+
+  td {
+    padding: 0 !important;
+    height: unset !important;
+    border-right: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
+
+    .v-field__outline__start, .v-field__outline__end {
+      border-radius: 0 !important;
+      border-width: 0 !important;
+    }
+  }
+
+  tr:last-child {
+    td {
+      padding: 8px 16px !important;
+      border-bottom: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
+    }
+  }
+
+  th:last-child, td:last-child {
+    border-right: unset;
+  }
+
+  .v-field {
+    border-radius: 0;
+  }
+
+  .v-field--error {
+    border-bottom: 2px solid rgb(var(--v-theme-error));
+    background-color: rgb(var(--v-theme-error), .1) !important;
+  }
+
+  td, th {
+    font-size: 10px !important;
+    //FIXME: Конфликтует с таблицей икпу в документообороте
+    //padding: 0 !important;
+    color: #000 !important;
+  }
+
+  td input, td .app-picker-field {
+    padding: 0 8px;
+    font-size: 10px;
+  }
+
+  .v-autocomplete__selection, .v-select__selection {
+    font-size: 10px;
+  }
+
+  .v-field__input {
+    padding-left: 8px;
+  }
+
+  .v-field--appended {
+    padding-right: 8px;
+  }
+
+  tbody tr:last-child td {
+    padding: 8px 8px !important;
+  }
+}
+
+.employees-table {
+  th {
+    padding: 0 8px !important;
+  }
+
+  td {
+    padding: 8px !important;
+  }
+
+  td:has(.v-input), tr:last-child td:has(.v-input) {
+    padding: 0 !important;
+  }
+}
+
+.document {
+  .document-id {
+    font-size: 10pt
+  }
+
+  .document-title {
+    font-size: 12pt !important;
+    color: #000 !important;
+  }
+
+  .document-stamp {
+    font-size: 14px !important;
+  }
+
+  .v-card-text {
+    font-size: 11pt !important;
+    //text-align: justify;
+    color: #000 !important;
+  }
+
+  .document-title {
+    width: 100%;
+  }
+
+  .document-qr {
+    position: absolute;
+    top: 24px;
+    right: 14px;
+  }
+
+  .document-stamp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #0056ff;
+    border: 2px solid #0056ff;
+    border-radius: 4px;
+
+    padding: 12px;
+    width: 100%;
+  }
+
+  .document-stamp.green {
+    color: #28C76FFF;
+    border-color: #28C76FFF;
+  }
+
+  .document-stamp.yellow {
+    color: #FF9F43;
+    border-color: #FF9F43;
+  }
+
+  .document-stamp.red {
+    color: #EA5455FF;
+    border-color: #EA5455FF;
+  }
+
+  .document-table {
+    width: 100%;
+
+    td {
+      padding-bottom: 0.1rem;
+      padding-top: 0.1rem;
+      width: 50%;
+    }
+  }
+
+  .document-products-table {
+    table {
+      table-layout: auto;
+      text-align: start;
+    }
+
+    th {
+      text-transform: initial !important;
+    }
+
+    td, th {
+      font-size: 10px !important;
+      padding: 8px 8px !important;
+      color: #000 !important;
+    }
+
+    tbody tr:last-child td {
+      padding: 8px 8px !important;
+    }
+  }
+}
+
+.v-select__selection, .v-autocomplete__selection {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.app-autocomplete {
+  .v-autocomplete--chips {
+    .v-field--focused {
+      .v-chip {
+        display: none;
+      }
+    }
+  }
+}
+
+.input-text-right input {
+  text-align: right;
+}
+
+.input-text-center input {
+  text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.layout-vertical-nav {
+  background-color: rgb(var(--v-theme-background)) !important;
+  box-shadow: none !important;
+}
+
+.layout-horizontal-nav {
+  .nav-link, .nav-group {
+    font-weight: 500 !important;
+  }
+}
+
+.nav-link:has(.default-style) {
+  .router-link-active, .router-link-exact-active {
+    background-color: rgb(var(--v-theme-background)) !important;
+    color: rgb(var(--v-global-theme-primary)) !important;
+    box-shadow: none !important;
+  }
+}
+
+.nav-link:not(.nav-link:has(.default-style)) {
+  .router-link-active, .router-link-exact-active {
+    //background: linear-gradient(72.47deg, rgb(var(--v-theme-primary)) 22.16%, rgba(var(--v-theme-primary), 0.7) 76.47%) !important;
+  }
+}
+
+.gradient-active-btn {
+  //background: linear-gradient(72.47deg, rgb(var(--v-theme-primary)) 22.16%, rgba(var(--v-theme-primary), 0.7) 76.47%) !important;
+}
+
+.account-info {
+  display: flex;
+
+  .account-info__label {
+    display: flex;
+    align-items: center;
+  }
+
+  .account-info__value {
+    text-align: right;
+    font-weight: 500;
+    justify-content: right;
+    display: flex;
+    align-items: center;
+    max-width: 75%;
+  }
+}
+
+.director-identification-stage-timer {
+  border-radius: 50%;
+  border: 1px solid #28c76f;
+  color: #28c76f;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.director-identification-stage-ol {
+  max-width: 600px;
+
+  li {
+    margin-bottom: .5rem;
+  }
+}
+
+.balance-padding-first-child-table {
+  tr td.fix-padding {
+    padding-right: 0 !important;
+    padding-left: 10px !important;
+    width: 40px !important;
+  }
+  tr td.fix-right-padding {
+    padding-right: 10px !important;
+    padding-left: 0!important;
+    width: 40px !important;
+  }
+}
+
+.badge {
+  --bs-badge-padding-x: 1em;
+  --bs-badge-padding-y: 0.49em;
+  --bs-badge-font-size: 0.81em;
+  --bs-badge-font-weight: 500;
+  --bs-badge-color: #fff;
+  --bs-badge-border-radius: 0.25rem;
+  display: inline-block;
+  padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+  font-size: var(--bs-badge-font-size);
+  font-weight: var(--bs-badge-font-weight);
+  line-height: 1;
+  color: var(--bs-badge-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--bs-badge-border-radius);
+}
+
+.clip-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.block-scroll-capability {
+  padding-inline-end: var(--v-scrollbar-offset);
+  overflow-y: hidden !important;
+}
+
+.Vue-Toastification__toast-body {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.flatpickr-calendar {
+  z-index: 9999 !important;
+}
+
+.drawer-details-section {
+  padding: 14px !important;
+  padding-bottom: 8px !important;
+  padding-top: 8px !important;
+}
+
+.drawer-details-grid-container {
+  display: flex;
+  flex-direction: column;
+  //gap: 0.25rem;
+}
+
+.drawer-details-grid-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  //align-items: center;
+  text-align: end;
+
+  strong {
+    text-align: left;
+  }
+}
+
+.drawer-countercheck-fix {
+  .v-card-item {
+    padding-bottom: 8px !important;
+    padding-top: 8px !important;
+  }
+}
+
+.v-file-input .v-field__input {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: unset;
+}
+.lightDashboardCheckboxes .v-checkbox-btn:not(.v-selection-control--dirty) .v-selection-control__input > svg {
+  color: white !important;
+}
+
+.v-application .app-combobox .v-combobox__selection {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+html:has(.resize-enabled) * {
+  cursor: col-resize !important;
+  user-select: none;
+}
+
+.sortable-fallback {
+  cursor: grab;
+}
+
+.sortable-fallback {
+  opacity: 1 !important;
+
+  & .sort-col-disabled {
+    opacity: 1
+  }
+}
+
+.sortable-ghost {
+  opacity: 0
+}
+
+.toast-custom {
+  padding: 15px 25px;
+  opacity: .85;
+  background: #000;
+  min-height: 46px;
+  min-width: 344px;
+  max-width: 500px;
+  border-radius: 26px;
+
+  .Vue-Toastification__icon {
+    display: none;
+  }
+
+  .Vue-Toastification__toast-body {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+  }
+  .Vue-Toastification__toast-component-body {
+    font-size: 13px;
+  }
+}
